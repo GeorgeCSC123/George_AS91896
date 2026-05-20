@@ -11,12 +11,10 @@ title_label = tk.Label(root, text="George’s countries quiz", fg="white", bg="#
 photo = tk.PhotoImage(file=r"C:\Users\relia\Downloads\12CSC\Screenshot 2026-05-19 091556.png")
 photo_label = tk.Label(root, image=photo, bg="#7ed957")
 
-photo2 = tk.PhotoImage(file=r"C:\Users\relia\Downloads\12CSC\Screenshot 2026-05-19 091833.png")
-photo2_label = tk.Label(root, image=photo2, bg="#7ed957")
+start_button = tk.Button(root, text="Start Quiz", font=("Arial", 14), fg="#7ed957", bg="black")
+start_button.pack(side=tk.BOTTOM, pady=30)
 
-
-title_label.pack(pady=40)
-photo_label.pack(pady=40)
-photo2_label.pack(pady=40)
+title_label.pack(pady=30)
+photo_label.pack(pady=30)
 
 root.mainloop()
