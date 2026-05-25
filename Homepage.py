@@ -23,7 +23,7 @@ start_button = tk.Button(root, text="Start Quiz", font=("Arial", 40, "bold"), fg
 name_entry = tk.Entry(root, font=("Arial", 40), bg="white", fg="black", bd=2, relief="solid", justify="center")
 
 # creating a submit button for the name
-submit_button = tk.Button(root, text="Submit Name", command=submit_name, font=("Arial", 25, "bold"), fg="white", bg="black", bd=0, activebackground="#333333", activeforeground="white")
+submit_button = tk.Button(root, text="Submit Name", command=submit_name, font=("Arial", 25, "bold"), fg="white", bg="black")
 
 # positioning of widgets
 title_label.pack(pady=10)
@@ -34,3 +34,4 @@ submit_button.pack(pady=10)
 
 # keeps window running
 root.mainloop()
+
