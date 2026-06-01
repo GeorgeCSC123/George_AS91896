@@ -1,57 +1,73 @@
 import tkinter as tk
 
-#print functions
+
+# function print name
 def submit_name():
-    print(f"Name entered: {name_entry.get()}")
+   print(f"Name entered: {name_entry.get()}")
 
-def start_quiz():
-    print("Quiz started!")
 
-# clear text
-def clear(event):
-    if name_entry.get() == "Enter name to start":
-        name_entry.delete(0, tk.END)
+# function clear window
+def clear_window():
+   for widget in root.winfo_children():
+       widget.destroy()
+
+
+# function questions page
+def questions_page():
+   clear_window()
 
 
 # main window
 root = tk.Tk()
 root.title("My App")
-root.geometry("950x700")
+root.geometry("900x700")
 root.configure(bg="#7ed957")
 
+
 # title
-title_label = tk.Label(root, text="George’s countries quiz", fg="white", bg="#7ed957", font=("arial", 50, "bold"))
+title_label = tk.Label(root, text="George’s countries quiz", fg="white", bg="#7ed957", font=("arial", 40, "bold"))
+
 
 # image and displaying
-photo = tk.PhotoImage(file=r"C:\Users\23068\OneDrive - Mt Roskill Grammar School\Documents\Vscode y12\Screenshot 2026-05-19 091556.png")
+photo = tk.PhotoImage(file=r"C:\Users\23068\OneDrive - Mt Roskill Grammar School\Documents\Vscode y12\photo1.png")
 photo_label = tk.Label(root, image=photo, bg="#7ed957")
 
+
 # start button image
-photo2 = tk.PhotoImage(file=r"C:\Users\23068\OneDrive - Mt Roskill Grammar School\Documents\Vscode y12\Screenshot 2026-05-27 142520.png")
+photo2 = tk.PhotoImage(file=r"C:\Users\23068\OneDrive - Mt Roskill Grammar School\Documents\Vscode y12\photo2.png")
+
 
 # image button
-start_button = tk.Button(root, image=photo2, command=start_quiz, bd=0, relief="flat", highlightthickness=0, bg="#7ed957",
-                         activebackground="#7ed957", cursor="hand2")
+start_button = tk.Button(root, image=photo2, command=questions_page, bd=0, relief="flat", highlightthickness=0, bg="#7ed957",
+                        activebackground="#7ed957", cursor="hand2")
+
+
+# frame
+user_frame = tk.Frame(root,bg="white",padx=20,pady=10)
+
+
+# name entry text
+name_label = tk.Label(user_frame, text="Enter name to start", font=("Arial", 16, "bold"), bg="white", fg="black")
+
 
 #  name entry box
-name_entry = tk.Entry(root, font=("Arial", 35), bg="white", fg="black", bd=2, relief="solid", justify="center")
+name_entry = tk.Entry(user_frame, font=("Arial", 20), bg="white", fg="black", bd=2, relief="solid", justify="center")
 
-# enter name text
-name_entry.insert(0, "Enter name to start")
-
-# clears the text
-name_entry.bind("<FocusIn>", clear)
 
 # submit button
-submit_button = tk.Button(root, text="Submit Name", command=submit_name, font=("Arial", 30, "bold"), fg="white", bg="black",
-                          activebackground="gray20", activeforeground="white", cursor="hand2")
+submit_button = tk.Button(user_frame, text="Submit Name", command=submit_name, font=("Arial", 20, "bold"), fg="#7ed957", bg="black",
+                         activebackground="gray20", activeforeground="white", cursor="hand2")
+
 
 # positioning of widgets
-title_label.pack(pady=10)
-photo_label.pack(pady=10)
-start_button.pack(pady=10)
-name_entry.pack(pady=10, ipady=5)
-submit_button.pack(pady=10)
+title_label.pack(pady=5)
+photo_label.pack(pady=5)
+start_button.pack(pady=5)
+user_frame.pack(pady=5)
+name_label.pack(pady=5)
+name_entry.pack(pady=5, ipady=5)
+submit_button.pack(pady=5)
+
 
 # keeps window running
 root.mainloop()
