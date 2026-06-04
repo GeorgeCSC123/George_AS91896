@@ -55,5 +55,73 @@ name_label.pack(pady=5)
 name_entry.pack(pady=5, ipady=5)
 submit_button.pack(pady=5)
 
+quiz_info = [
+    {
+        "question": "What country does this flag belong to?",
+        "option": ["Japan", "China", "South Korea", "Singapore"],
+        "answer": "Japan",
+        "image": "img1"
+    },
+    {
+        "question": "What country does this flag belong to?",
+        "option": ["Italy", "Mexico", "Germany", "France"],
+        "answer": "France",
+        "image": "img2"
+    },
+    {
+        "question": "Which is the capital city of Canada?",
+        "option": ["Toronto", "Ottawa", "Montreal", "Calgary"],
+        "answer": "Ottawa",
+        "image": "img3"
+    },
+    {
+        "question": "Which is the capital city of Spain?",
+        "option": ["Barcelona", "Madrid", "Valencia", "Seville"],
+        "answer": "Madrid",
+        "image": "img4"
+    },
+    {
+        "question": "Which country is this food from?",
+        "option": ["UK", "USA", "Italy", "Mexico"],
+        "answer": "Mexico",
+        "image": "img5"
+    },
+    {
+        "question": "Which country is this food from?",
+        "option": ["Canada", "Germany", "USA", "Sweden"],
+        "answer": "USA",
+        "image": "img6"
+    },
+    {
+        "question": "This currency belongs to?",
+        "option": ["Vietnam", "China", "Indonesia", "Japan"],
+        "answer": "China",
+        "image": "img7"
+    },
+    {
+        "question": "This currency belongs to?",
+        "option": ["Russia", "USA", "UK", "Greece"],
+        "answer": "UK",
+        "image": "img8"
+    },
+    {
+        "question": "This is the national animal of?",
+        "option": ["Australia", "NZ", "Austria", "Argentina"],
+        "answer": "Australia",
+        "image": "img9"
+    },
+    {
+        "question": "This is the national animal of?",
+        "option": ["Italy", "Portugal", "Iceland", "Ireland"],
+        "answer": "Italy",
+        "image": "img10"
+    },
+]
+
+print(quiz_info)
+
+
+
+
 # keeps window running
 root.mainloop()
