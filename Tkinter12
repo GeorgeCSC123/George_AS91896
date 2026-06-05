@@ -13,10 +13,24 @@ def clear_window():
 def questions_page():
    clear_window()
 
+   # current question number
+   first_question = 0
+   quest = quiz_info[first_question]
+
+   # question label
+   question_label = tk.Label(root, text=quest["question"], font=("Arial", 25, "bold"), bg="#7ed957", fg="white")
+   question_label.pack(pady=20)
+
+   # Option buttons
+   for option in quest["option"]:
+       button = tk.Button(root, text=option, font=("Arial", 16), width=25)
+       button.pack(pady=20)
+
+
 # main window
 root = tk.Tk()
 root.title("My App")
-root.geometry("950x700")
+root.geometry("1000x700")
 root.configure(bg="#7ed957")
 
 # title
@@ -55,6 +69,7 @@ name_label.pack(pady=5)
 name_entry.pack(pady=5, ipady=5)
 submit_button.pack(pady=5)
 
+# quiz info dictionary
 quiz_info = [
     {
         "question": "What country does this flag belong to?",
@@ -117,10 +132,6 @@ quiz_info = [
         "image": "img10"
     },
 ]
-
-print(quiz_info)
-
-
 
 
 # keeps window running
