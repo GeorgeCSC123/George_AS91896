@@ -16,16 +16,13 @@ def clear_window():
 def questions_page():
   clear_window()
 
-
   # current question number
   first_question = 0
   quest = quiz_info[first_question]
 
-
   # question label
-  question_label = tk.Label(root, text=quest["question"], font=("Arial", 25, "bold"), bg="#7ed957", fg="white")
+  question_label = tk.Label(root, text=quest["question"], font=("Arial", 25, "bold"), bg="#7ed957", fg="#cb6ce6")
   question_label.pack(pady=5)
-
 
   # images
   question_image = tk.PhotoImage(file=quest["image"])
@@ -33,29 +30,24 @@ def questions_page():
   image_label.image = question_image
   image_label.pack(pady=5)
 
-
   # Option buttons
   for option in quest["option"]:
-      button = tk.Button(root, text=option, font=("Arial", 16), width=25)
+      button = tk.Button(root, text=option, font=("Arial", 16), width=25, fg="#db2e2e")
       button.pack(pady=5)
-
 
   # progression buttons
   back_button = tk.Button(root, text="back", width=25)
-  back_button.pack(pady=5)
-
+  back_button.place(relx=0.02, rely=0.95, anchor="sw")
 
   next_button = tk.Button(root, text="Next", width=25)
-  next_button.pack(pady=5)
-
+  next_button.place(relx=0.98, rely=0.95, anchor="se")
 
   skip_button = tk.Button(root, text="Skip", width=25)
-  skip_button.pack(pady=5)
+  skip_button.place(relx=0.98, rely=0.85, anchor="se")
 
-
-  #question number indicator
-  question_number_label = tk.Label(root, text=f"Question {first_question + 1} / 10", padx=20, pady=10)
-  question_number_label.pack(pady=5)
+  # question number indicator
+  question_number_label = tk.Label(root, text=f"Question {first_question + 1} / 10", padx=10, pady=5, font=("Arial", 16, "bold"), )
+  question_number_label.place(relx=0.98, rely=0.05, anchor="ne")
 
 
 # main window
