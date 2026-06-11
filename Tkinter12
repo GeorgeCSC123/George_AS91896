@@ -1,6 +1,7 @@
 import tkinter as tk
 
 
+
 # function print name
 def submit_name():
   print(f"Name entered: {name_entry.get()}")
@@ -36,25 +37,19 @@ def questions_page():
 
   # Option buttons
   for option in quest["option"]:
-      button = tk.Button(root, text=option, font=("Arial", 15, "bold"), width=12, fg="#db2e2e", bg="white")
+      button = tk.Button(root, text=option, font=("Arial", 15, "bold"), width=11, height=2, fg="#db2e2e", bg="white")
       button.pack(pady=10)
 
 
-  # progression buttons
-  nav1 = tk.PhotoImage(file=r"C:\Users\23068\OneDrive - Mt Roskill Grammar School\Vscode y12\nav1.png")
-
-  back_button = tk.Button(root, image=nav1)
+  # navigation buttons
+  back_button = tk.Button(root, image=nav1, bd=0, relief="flat", highlightthickness=0, bg="#7ed957",activebackground="#7ed957", cursor="hand2")
   back_button.place(relx=0.02, rely=0.95, anchor="sw")
 
-  nav2 = tk.PhotoImage(file=r"C:\Users\23068\OneDrive - Mt Roskill Grammar School\Vscode y12\nav2.png")
-
-  next_button = tk.Button(root, image=nav2)
+  next_button = tk.Button(root, image=nav2, bd=0, relief="flat", highlightthickness=0, bg="#7ed957",activebackground="#7ed957", cursor="hand2")
   next_button.place(relx=0.98, rely=0.95, anchor="se")
 
-  nav3 = tk.PhotoImage(file=r"C:\Users\23068\OneDrive - Mt Roskill Grammar School\Vscode y12\nav3.png")
-
-  skip_button = tk.Button(root, image=nav3)
-  skip_button.place(relx=0.98, rely=0.85, anchor="se")
+  skip_button = tk.Button(root, image=nav3, bd=0, relief="flat", highlightthickness=0, bg="#7ed957",activebackground="#7ed957", cursor="hand2")
+  skip_button.place(relx=0.98, rely=0.825, anchor="se")
 
 
 # main window
@@ -63,6 +58,10 @@ root.title("My App")
 root.geometry("1000x700")
 root.configure(bg="#7ed957")
 
+# images of navigation buttons
+nav1 = tk.PhotoImage(file=r"C:\Users\23068\OneDrive - Mt Roskill Grammar School\Vscode y12\nav1.png")
+nav2 = tk.PhotoImage(file=r"C:\Users\23068\OneDrive - Mt Roskill Grammar School\Vscode y12\nav2.png")
+nav3 = tk.PhotoImage(file=r"C:\Users\23068\OneDrive - Mt Roskill Grammar School\Vscode y12\nav3.png")
 
 # title
 title_label = tk.Label(root, text="George’s countries quiz", fg="white", bg="#7ed957", font=("arial", 40, "bold"))
@@ -176,6 +175,5 @@ quiz_info = [
 
 # keeps window running
 root.mainloop()
-
 
 
