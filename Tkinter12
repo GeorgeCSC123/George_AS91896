@@ -11,28 +11,42 @@ def clear_window():
  for widget in root.winfo_children():
      widget.destroy()
 
-
+first_question = 0
 # function questions page
 def questions_page():
+ global first_question
  clear_window()
 
-
  # current question number
- first_question = 0
  quest = quiz_info[first_question]
+
+ # function next, back and skip button
+ def next_question():
+     global first_question
+     first_question += 1
+     questions_page()
+
+ def back_question():
+     global first_question
+     first_question -= 1
+     questions_page()
+
+ def skip_question():
+     global first_question
+     first_question += 1
+     questions_page()
 
 
  # question number indicator
  question_number_label = tk.Label(root, text=f"Question {first_question + 1} / 10", padx=15, bg="white", pady=10, font=("Arial", 20, "bold"), )
  question_number_label.pack(pady=15)
 
-
  # question label
  question_label = tk.Label(root, text=quest["question"], font=("Arial", 25, "bold"), bg="#7ed957", fg="#cb6ce6")
  question_label.pack(pady=10)
 
 
- # images and resizing
+ # question image and resizing
  from PIL import Image, ImageTk
  img = Image.open(quest["image"])
  width, height = img.size
@@ -67,15 +81,15 @@ def questions_page():
 
 
  # navigation buttons
- back_button = tk.Button(root, image=nav1, bd=0, relief="flat", highlightthickness=0, bg="#7ed957",activebackground="#7ed957", cursor="hand2")
+ back_button = tk.Button(root, image=nav1, command=back_question, bd=0, relief="flat", highlightthickness=0, bg="#7ed957",activebackground="#7ed957", cursor="hand2")
  back_button.place(relx=0.02, rely=0.95, anchor="sw")
 
 
- next_button = tk.Button(root, image=nav2, bd=0, relief="flat", highlightthickness=0, bg="#7ed957",activebackground="#7ed957", cursor="hand2")
+ next_button = tk.Button(root, image=nav2, command=next_question, bd=0, relief="flat", highlightthickness=0, bg="#7ed957",activebackground="#7ed957", cursor="hand2")
  next_button.place(relx=0.98, rely=0.95, anchor="se")
 
 
- skip_button = tk.Button(root, image=nav3, bd=0, relief="flat", highlightthickness=0, bg="#7ed957",activebackground="#7ed957", cursor="hand2")
+ skip_button = tk.Button(root, image=nav3, command=skip_question,bd=0, relief="flat", highlightthickness=0, bg="#7ed957",activebackground="#7ed957", cursor="hand2")
  skip_button.place(relx=0.98, rely=0.825, anchor="se")
 
 
