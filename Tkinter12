@@ -66,7 +66,7 @@ def questions_page():
 
  # Row 1 two options
  for option in quest["option"][:2]:
-     border = tk.Frame(row1, bg="#cb6ce6", padx=2, pady=2)
+     border = tk.Frame(row1, bg="#cb6ce6", padx=4, pady=4)
      button = tk.Button(border, text=option, font=("Arial", 15, "bold"), width=11, height=2, fg="#db2e2e", bg="white")
      button.pack()
      border.pack(side="left", padx=15, pady=15)
@@ -74,7 +74,7 @@ def questions_page():
 
  # Row 2 two options
  for option in quest["option"][2:]:
-     border = tk.Frame(row2, bg="#cb6ce6", padx=2, pady=2)
+     border = tk.Frame(row2, bg="#cb6ce6", padx=4, pady=4)
      button = tk.Button(border, text=option, font=("Arial", 15, "bold"), width=11, height=2, fg="#db2e2e", bg="white")
      button.pack()
      border.pack(side="left", padx=15, pady=15)
@@ -214,7 +214,6 @@ quiz_info = [
       "image": r"C:\Users\23068\OneDrive - Mt Roskill Grammar School\Vscode y12\img10.png"
   },
 ]
-
 
 # keeps window running
 root.mainloop()
