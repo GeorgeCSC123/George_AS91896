@@ -20,6 +20,15 @@ def questions_page():
  # current question number
  quest = quiz_info[first_question]
 
+ # keep track of option buttons
+ all_buttons = []
+
+ # function select option effect stay
+ def select_option(clicked_button):
+     for btn in all_buttons:
+         btn.config(bg="white", fg="#db2e2e")
+     clicked_button.config(bg="#cb6ce6", fg="white")
+
  # function next, back and skip button
  def next_question():
      global first_question
@@ -63,22 +72,23 @@ def questions_page():
  row1.pack()
  row2.pack()
 
-
  # Row 1 two options
  for option in quest["option"][:2]:
-     border = tk.Frame(row1, bg="#cb6ce6", padx=4, pady=4)
+     border = tk.Frame(row1, bg="#cb6ce6", padx=2, pady=2)
      button = tk.Button(border, text=option, font=("Arial", 15, "bold"), width=11, height=2, fg="#db2e2e", bg="white")
+     button.config(command=lambda b=button: select_option(b))
      button.pack()
      border.pack(side="left", padx=15, pady=15)
-
+     all_buttons.append(button)
 
  # Row 2 two options
  for option in quest["option"][2:]:
-     border = tk.Frame(row2, bg="#cb6ce6", padx=4, pady=4)
+     border = tk.Frame(row2, bg="#cb6ce6", padx=2, pady=2)
      button = tk.Button(border, text=option, font=("Arial", 15, "bold"), width=11, height=2, fg="#db2e2e", bg="white")
+     button.config(command=lambda b=button: select_option(b))
      button.pack()
      border.pack(side="left", padx=15, pady=15)
-
+     all_buttons.append(button)
 
  # navigation buttons
  back_button = tk.Button(root, image=nav1, command=back_question, bd=0, relief="flat", highlightthickness=0, bg="#7ed957",activebackground="#7ed957", cursor="hand2")
