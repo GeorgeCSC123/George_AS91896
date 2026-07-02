@@ -23,7 +23,7 @@ def score_page():
           score += 1
 
   # label of score
-   score_label = tk.Label(root, text=f" Congrats {user_name} \n Score: {score} / {len(quiz_info)}",
+   score_label = tk.Label(root, text=f" Congrats {user_name} \n Score \n {score} / {len(quiz_info)}",
                           font=("Arial", 30, "bold"), bg="#7ed957", fg="white")
    score_label.pack(pady=15)
 
@@ -264,4 +264,3 @@ quiz_info = [
 
 # keeps window running
 root.mainloop()
-
