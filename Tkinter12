@@ -23,33 +23,45 @@ def score_page():
           score += 1
 
   # label of score
-   score_label = tk.Label(root, text=f" Congrats {user_name} \n Score \n {score} / {len(quiz_info)}",
-                          font=("Arial", 30, "bold"), bg="#7ed957", fg="white")
+   score_label = tk.Label(root, text=f" Congrats {user_name}\nScore\n{score} / {len(quiz_info)}",
+                          font=("Arial", 25, "bold"), bg="#7ed957", fg="white")
    score_label.pack(pady=15)
 
    #picture 1 display
    picture1 = tk.PhotoImage(file=r"C:\Users\23068\OneDrive - Mt Roskill Grammar School\Vscode y12\picture1.png")
    picture1_label = tk.Label(root, image=picture1, bg="#7ed957")
    picture1_label.image = picture1
-   picture1_label.place(relx=0.3, rely=0.4, anchor="center")
+   picture1_label.place(relx=0.4, rely=0.6, anchor="center")
 
     #picture 2 display
    picture2 = tk.PhotoImage(file=r"C:\Users\23068\OneDrive - Mt Roskill Grammar School\Vscode y12\picture2.png")
    picture2_label = tk.Label(root, image=picture2, bg="#7ed957")
    picture2_label.image = picture2
-   picture2_label.place(relx=0.7, rely=0.4, anchor="center")
+   picture2_label.place(relx=0.6, rely=0.6, anchor="center")
 
    # button stop
    picture3 = tk.PhotoImage(file=r"C:\Users\23068\OneDrive - Mt Roskill Grammar School\Vscode y12\picture3.png")
    picture3_label = tk.Label(root, image=picture3, bg="#7ed957")
    picture3_label.image = picture3
-   picture3_label.place(relx=0.7, rely=0.8, anchor="center")
+   picture3_label.place(relx=0.7, rely=0.85, anchor="center")
 
     #button replay
    picture4 = tk.PhotoImage(file=r"C:\Users\23068\OneDrive - Mt Roskill Grammar School\Vscode y12\picture4.png")
    picture4_label = tk.Label(root, image=picture4, bg="#7ed957")
    picture4_label.image = picture4
-   picture4_label.place(relx=0.3, rely=0.8, anchor="center")
+   picture4_label.place(relx=0.3, rely=0.85, anchor="center")
+
+    #picture 5 and 6 display
+   picture5 = tk.PhotoImage(file=r"C:\Users\23068\OneDrive - Mt Roskill Grammar School\Vscode y12\picture5.png")
+   picture5_label = tk.Label(root, image=picture5, bg="#7ed957")
+   picture5_label.image = picture5
+   picture5_label.place(relx=0.15, rely=0.4, anchor="center")
+
+   picture6 = tk.PhotoImage(file=r"C:\Users\23068\OneDrive - Mt Roskill Grammar School\Vscode y12\picture6.png")
+   picture6_label = tk.Label(root, image=picture6, bg="#7ed957")
+   picture6_label.image = picture6
+   picture6_label.place(relx=0.85, rely=0.4, anchor="center")
+
 
 user_answers = {}
 first_question = 0
