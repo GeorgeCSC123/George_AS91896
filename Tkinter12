@@ -1,5 +1,7 @@
 import tkinter as tk
 
+from pygame.examples.aliens import Score
+
 # function print name
 def submit_name():
    global user_name
@@ -17,6 +19,20 @@ def score_page():
    clear_window()
    score = 0
 
+   # Row of 10 small boxes at the top
+   boxes_frame = tk.Frame(root, bg="#7ed957")
+   boxes_frame.pack(pady=50)
+
+   for i in range(10):
+       # Green if correct, red if incorrect
+       if user_answers.get(i) == quiz_info[i]["answer"]:
+           colour = "#00cc66"
+       else:
+           colour = "#ff4d4d"
+
+       box = tk.Label(boxes_frame, width=5, height=2, bg=colour, relief="solid", bd=3)
+       box.pack(side="left", padx=8)
+
   # score calculator
    for i in range(len(quiz_info)):
        if user_answers.get(i) == quiz_info[i]["answer"]:
@@ -24,8 +40,8 @@ def score_page():
 
   # label of score
    score_label = tk.Label(root, text=f" Congrats {user_name}\nScore\n{score} / {len(quiz_info)}",
-                          font=("Arial", 25, "bold"), bg="#7ed957", fg="white")
-   score_label.pack(pady=15)
+                          font=("Arial", 30, "bold"), bg="#7ed957", fg="white")
+   score_label.place(relx=0.5, rely=0.3, anchor="center")
 
    #picture 1 display
    picture1 = tk.PhotoImage(file=r"C:\Users\23068\OneDrive - Mt Roskill Grammar School\Vscode y12\picture1.png")
@@ -61,7 +77,6 @@ def score_page():
    picture6_label = tk.Label(root, image=picture6, bg="#7ed957")
    picture6_label.image = picture6
    picture6_label.place(relx=0.85, rely=0.4, anchor="center")
-
 
 user_answers = {}
 first_question = 0
