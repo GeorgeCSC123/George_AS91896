@@ -1,6 +1,5 @@
 import tkinter as tk
 
-from pygame.examples.aliens import Score
 
 # function print name
 def submit_name():
@@ -66,6 +65,15 @@ def score_page():
    picture4_label = tk.Label(root, image=picture4, bg="#7ed957")
    picture4_label.image = picture4
    picture4_label.place(relx=0.3, rely=0.85, anchor="center")
+
+   #stopping quiz
+   stop_button = tk.Button(root, image=picture3, command=stop_quiz, bd=0, relief="flat", highlightthickness=0,
+                            bg="#7ed957", activebackground="#7ed957", cursor="hand2")
+
+   #restarting quiz
+   restart_button = tk.Button(root, image=picture4, command=restart_quiz, bd=0, relief="flat", highlightthickness=0,
+                            bg="#7ed957", activebackground="#7ed957", cursor="hand2")
+
 
     #picture 5 and 6 display
    picture5 = tk.PhotoImage(file=r"C:\Users\23068\OneDrive - Mt Roskill Grammar School\Vscode y12\picture5.png")
