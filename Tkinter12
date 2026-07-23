@@ -1,5 +1,11 @@
 import tkinter as tk
 
+#functions to restart and end quiz
+def restart_quiz():
+   global first_question, user_answers
+   first_question = 0
+   user_answers = {}
+   questions_page()
 
 def stop_quiz():
     root.destroy()
@@ -73,7 +79,7 @@ def score_page():
    stop_button.place(relx=0.7, rely=0.85, anchor="center")
 
    #restarting quiz
-   restart_button = tk.Button(root, image=picture3, command=questions_page, bd=0, relief="flat", highlightthickness=0,
+   restart_button = tk.Button(root, image=picture3, command=restart_quiz, bd=0, relief="flat", highlightthickness=0,
                             bg="#7ed957", activebackground="#7ed957", cursor="hand2")
    restart_button.place(relx=0.3, rely=0.85, anchor="center")
 
