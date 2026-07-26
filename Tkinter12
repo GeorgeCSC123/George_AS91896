@@ -120,6 +120,8 @@ def questions_page():
 # function next, back and skip button
   def next_question():
       global first_question
+      if first_question not in user_answers:
+          return
       if first_question < len(quiz_info) - 1:
           first_question += 1
           questions_page()
@@ -128,8 +130,9 @@ def questions_page():
 
   def back_question():
       global first_question
-      first_question -= 1
-      questions_page()
+      if first_question > 0:
+          first_question -= 1
+          questions_page()
 
   def skip_question():
       global first_question
@@ -181,7 +184,15 @@ def questions_page():
       border.pack(side="left", padx=15, pady=15)
       all_buttons.append(button)
 
-# navigation buttons
+  # Highlight previously selected answer
+  if first_question in user_answers:
+      selected = user_answers[first_question]
+
+      for btn in all_buttons:
+          if btn["text"] == selected:
+              btn.config(bg="#cb6ce6", fg="white")
+
+  # navigation buttons
   back_button = tk.Button(root, image=nav1, command=back_question, bd=0, relief="flat", highlightthickness=0,
                        bg="#7ed957",activebackground="#7ed957", cursor="hand2")
   back_button.place(relx=0.02, rely=0.95, anchor="sw")
