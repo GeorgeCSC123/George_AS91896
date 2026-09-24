@@ -64,24 +64,24 @@ def score_page():
    score_label.place(relx=0.5, rely=0.3, anchor="center")
 
    #picture 1 display
-   picture1 = tk.PhotoImage(file=r"C:\Users\23068\OneDrive - Mt Roskill Grammar School\Vscode y12\picture1.png")
+   picture1 = tk.PhotoImage(file="picture1.png")
    picture1_label = tk.Label(root, image=picture1, bg="#7ed957")
    picture1_label.image = picture1
    picture1_label.place(relx=0.4, rely=0.6, anchor="center")
 
     #picture 2 display
-   picture2 = tk.PhotoImage(file=r"C:\Users\23068\OneDrive - Mt Roskill Grammar School\Vscode y12\picture2.png")
+   picture2 = tk.PhotoImage(file="picture2.png")
    picture2_label = tk.Label(root, image=picture2, bg="#7ed957")
    picture2_label.image = picture2
    picture2_label.place(relx=0.6, rely=0.6, anchor="center")
 
    # button replay
-   picture3 = tk.PhotoImage(file=r"C:\Users\23068\OneDrive - Mt Roskill Grammar School\Vscode y12\picture3.png")
+   picture3 = tk.PhotoImage(file="picture3.png")
    picture3_label = tk.Label(root, image=picture3, bg="#7ed957")
    picture3_label.image = picture3
 
     #button stop
-   picture4 = tk.PhotoImage(file=r"C:\Users\23068\OneDrive - Mt Roskill Grammar School\Vscode y12\picture4.png")
+   picture4 = tk.PhotoImage(file="picture4.png")
    picture4_label = tk.Label(root, image=picture4, bg="#7ed957")
    picture4_label.image = picture4
 
@@ -96,12 +96,12 @@ def score_page():
    restart_button.place(relx=0.3, rely=0.85, anchor="center")
 
     #picture 5 and 6 display
-   picture5 = tk.PhotoImage(file=r"C:\Users\23068\OneDrive - Mt Roskill Grammar School\Vscode y12\picture5.png")
+   picture5 = tk.PhotoImage(file="picture5.png")
    picture5_label = tk.Label(root, image=picture5, bg="#7ed957")
    picture5_label.image = picture5
    picture5_label.place(relx=0.15, rely=0.4, anchor="center")
 
-   picture6 = tk.PhotoImage(file=r"C:\Users\23068\OneDrive - Mt Roskill Grammar School\Vscode y12\picture6.png")
+   picture6 = tk.PhotoImage(file="picture6.png")
    picture6_label = tk.Label(root, image=picture6, bg="#7ed957")
    picture6_label.image = picture6
    picture6_label.place(relx=0.85, rely=0.4, anchor="center")
@@ -225,19 +225,19 @@ root.geometry("1000x700")
 root.configure(bg="#7ed957")
 
 # images of navigation buttons
-nav1 = tk.PhotoImage(file=r"C:\Users\23068\OneDrive - Mt Roskill Grammar School\Vscode y12\nav1.png")
-nav2 = tk.PhotoImage(file=r"C:\Users\23068\OneDrive - Mt Roskill Grammar School\Vscode y12\nav2.png")
-nav3 = tk.PhotoImage(file=r"C:\Users\23068\OneDrive - Mt Roskill Grammar School\Vscode y12\nav3.png")
+nav1 = tk.PhotoImage(file="nav1.png")
+nav2 = tk.PhotoImage(file="nav2.png")
+nav3 = tk.PhotoImage(file="nav3.png")
 
 # title
 title_label = tk.Label(root, text="George’s countries quiz", fg="white", bg="#7ed957", font=("arial", 40, "bold"))
 
 # image and displaying
-photo = tk.PhotoImage(file=r"C:\Users\23068\OneDrive - Mt Roskill Grammar School\Vscode y12\photo1.png")
+photo = tk.PhotoImage(file="photo1.png")
 photo_label = tk.Label(root, image=photo, bg="#7ed957")
 
 # start button image
-photo2 = tk.PhotoImage(file=r"C:\Users\23068\OneDrive - Mt Roskill Grammar School\Vscode y12\photo2.png")
+photo2 = tk.PhotoImage(file="photo2.png")
 
 # image button
 start_button = tk.Button(root, image=photo2, command=start_quiz, bd=0, relief="flat", highlightthickness=0, bg="#7ed957",
@@ -272,61 +272,61 @@ quiz_info = [
     "question": "What country does this flag belong to?",
     "option": ["Japan", "China", "South Korea", "Singapore"],
     "answer": "Japan",
-    "image": r"C:\Users\23068\OneDrive - Mt Roskill Grammar School\Vscode y12\img1.png"
+    "image": "img1.png"
 },
 {
     "question": "What country does this flag belong to?",
     "option": ["Italy", "Mexico", "Germany", "France"],
     "answer": "France",
-    "image": r"C:\Users\23068\OneDrive - Mt Roskill Grammar School\Vscode y12\img2.png"
+    "image": "img2.png"
 },
 {
     "question": "Which is the capital city of Canada?",
     "option": ["Toronto", "Ottawa", "Montreal", "Calgary"],
     "answer": "Ottawa",
-    "image": r"C:\Users\23068\OneDrive - Mt Roskill Grammar School\Vscode y12\img3.png"
+    "image": "img3.png"
 },
 {
     "question": "Which is the capital city of Spain?",
     "option": ["Barcelona", "Madrid", "Valencia", "Seville"],
     "answer": "Madrid",
-    "image": r"C:\Users\23068\OneDrive - Mt Roskill Grammar School\Vscode y12\img4.png"
+    "image": "img4.png"
 },
 {
     "question": "Which country is this food from?",
     "option": ["UK", "USA", "Italy", "Mexico"],
     "answer": "Mexico",
-    "image": r"C:\Users\23068\OneDrive - Mt Roskill Grammar School\Vscode y12\img5.png"
+    "image": "img5.png"
 },
 {
     "question": "Which country is this food from?",
     "option": ["Canada", "Germany", "USA", "Sweden"],
     "answer": "USA",
-    "image": r"C:\Users\23068\OneDrive - Mt Roskill Grammar School\Vscode y12\img6.png"
+    "image": "img6.png"
 },
 {
     "question": "This currency belongs to?",
     "option": ["Vietnam", "China", "Indonesia", "Japan"],
     "answer": "China",
-    "image": r"C:\Users\23068\OneDrive - Mt Roskill Grammar School\Vscode y12\img7.png"
+    "image": "img7.png"
 },
 {
     "question": "This currency belongs to?",
     "option": ["Russia", "USA", "UK", "Greece"],
     "answer": "UK",
-    "image": r"C:\Users\23068\OneDrive - Mt Roskill Grammar School\Vscode y12\img8.png"
+    "image": "img8.png"
 },
 {
     "question": "This is the national animal of?",
     "option": ["Australia", "NZ", "Austria", "Argentina"],
     "answer": "Australia",
-    "image": r"C:\Users\23068\OneDrive - Mt Roskill Grammar School\Vscode y12\img9.png"
+    "image": "img9.png"
 },
 {
     "question": "This is the national animal of?",
     "option": ["Italy", "Portugal", "Iceland", "Ireland"],
     "answer": "Italy",
-    "image": r"C:\Users\23068\OneDrive - Mt Roskill Grammar School\Vscode y12\img10.png"
+    "image": "img10.png"
 },
 ]
 
